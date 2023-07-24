@@ -23,20 +23,20 @@ User Function MGPE2021
     cHtml := MemoRead( cArquivo )
 
     //com a função Replace(), substitua as variaveis dentro do HTML
-    cHtml := Replace(cHtml,"[DADOSEMPRESA]","&lt;strong&gt;&lt;u&gt;"+Capital(cEmpresa)+"&lt;/u&gt;&lt;/strong&gt;")
-    cHtml := Replace(cHtml,"[DADOSTRABALHADOR]","&lt;strong&gt;&lt;u&gt;"+Capital(cFunciona)+"&lt;/u&gt;&lt;/strong&gt;")
-    cHtml := Replace(cHtml,"[FUNCAOTRABALHADOR]","&lt;strong&gt;&lt;u&gt;"+Capital(cFuncao)+"&lt;/u&gt;&lt;/strong&gt;")
-    cHtml := Replace(cHtml,"[SALARIO]","&lt;strong&gt;&lt;u&gt;"+cSalario+"&lt;/u&gt;&lt;/strong&gt;")
-    cHtml := Replace(cHtml,"[DIA]","&lt;strong&gt;&lt;u&gt;"+cDia+"&lt;/u&gt;&lt;/strong&gt;")
-    cHtml := Replace(cHtml,"[MES]","&lt;strong&gt;&lt;u&gt;"+cMes+"&lt;/u&gt;&lt;/strong&gt;")
-    cHtml := Replace(cHtml,"[ANO]","&lt;strong&gt;&lt;u&gt;"+cAno+"&lt;/u&gt;&lt;/strong&gt;")
-    cHtml := Replace(cHtml,"[CIDADE]","&lt;strong&gt;&lt;u&gt;"+cCidade+"&lt;/u&gt;&lt;/strong&gt;")
-    cHtml := Replace(cHtml,"[ESTADO]","&lt;strong&gt;&lt;u&gt;"+cEstado+"&lt;/u&gt;&lt;/strong&gt;")
+    cHtml := Replace(cHtml,"[DADOSEMPRESA]","<strong><u>"+Capital(cEmpresa)+"</u></strong>")
+    cHtml := Replace(cHtml,"[DADOSTRABALHADOR]","<strong><u>"+Capital(cFunciona)+"</u></strong>")
+    cHtml := Replace(cHtml,"[FUNCAOTRABALHADOR]","<strong><u>"+Capital(cFuncao)+"</u></strong>")
+    cHtml := Replace(cHtml,"[SALARIO]","<strong><u>"+cSalario+"</u></strong>")
+    cHtml := Replace(cHtml,"[DIA]","<strong><u>"+cDia+"</u></strong>")
+    cHtml := Replace(cHtml,"[MES]","<strong><u>"+cMes+"</u></strong>")
+    cHtml := Replace(cHtml,"[ANO]","<strong><u>"+cAno+"</u></strong>")
+    cHtml := Replace(cHtml,"[CIDADE]","<strong><u>"+cCidade+"</u></strong>")
+    cHtml := Replace(cHtml,"[ESTADO]","<strong><u>"+cEstado+"</u></strong>")
 
     DEFINE DIALOG oDlg TITLE "Contrato" FROM 0, 0 TO 550, 800 PIXEL
     oEdit := tSimpleEditor():New(0, 0, oDlg, 500, 300)
     oEdit:TextFormat(1)
-    oEdit:Load("&lt;html&gt;&lt;head&gt;&lt;style&gt;* {font:Normal 10pt Arial;text-align: justify;} .titulo {font:Bold 14pt Arial;text-align: center;} p {text-align: justify;text-justify: inter-word;}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;"+cHtml+"&lt;/body&gt;&lt;/html&gt;")
+    oEdit:Load("<html><head><style>* {font:Normal 10pt Arial;text-align: justify;} .titulo {font:Bold 14pt Arial;text-align: center;} p {text-align: justify;text-justify: inter-word;}</style></head><body>"+cHtml+"</body></html>")
     oEdit:Align := CONTROL_ALIGN_ALLCLIENT 
     ACTIVATE DIALOG oDlg ON INIT EnchoiceBar(oDlg,{|| oEdit:SaveToPDF("C:\TMP\contrato.pdf"), MsgInfo("Arquivo salvo em C:\TMP\contrato.pdf","Info") },{|| oDlg:End()}) CENTERED
 
