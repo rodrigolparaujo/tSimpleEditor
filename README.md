@@ -9,3 +9,5 @@ Dentro do fonte, use o comando REPLACE() para substituir o conteúdo das variave
 Para ler o arquivo html, use a função MEMOREAD e com o componente tSimpleEditor você pode visualizar o HTML e exportar para PDF, o seu uso é bem simples.
 
 <p><img src="resources/html-para-pdf-001.png"></p>
+
+<center><p><a href="https://dayz-servers.org/server/170059/"><img src="https://dayz-servers.org/server/170059/banners/leaderboard-1.png" border="0" class="img-fluid"></a></p></center>
